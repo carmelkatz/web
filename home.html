@@ -1,0 +1,129 @@
+
+<html>
+   
+
+<style> 
+  * { box-sizing: border-box;}
+
+  body, html { 
+      height: 100%;
+      margin: 1;
+  }
+  
+  .tab-style{ 
+      background-color: lightblue;
+      color: black;
+      padding: 14px 16px;
+      width: 33%;
+  }
+
+  .tab-style:hover{ 
+      background-color: lightgreen;
+  }
+
+.tabcontent{ 
+    color: black;
+    height: 600%;
+    padding: 100px 30px;
+}
+
+#Home { background-color: #fff0f5;}
+#Contact { background-color: lemonchiffon;}
+#About { background-color: lightseagreen;}
+
+.rightcolumn {
+    float:right;
+    width:40%;
+    background-color:grey;
+    padding-left:20px;
+}
+
+.card{
+    background-color:lightskyblue;
+    width: 100%;
+    padding: 20px;
+}
+</style>
+
+<body>
+    <button class="tab-style" 
+     onclick="openPage('Home', this, '#fff0f5')" id="defaultOpen"> Home </button>
+    <button class="tab-style"  onclick="openPage('Contact', this, 'lemonchiffon')"> Contact </button>
+    <button class="tab-style"  onclick="openPage('About', this, 'lightseagreen')"> About </button>
+
+<div id ="Home" class="tabcontent">
+    <h2> Home</h2>     <article > 
+    
+      
+<article>  
+        <div class="rightcolumn"> 
+            <div class="card">
+                <h2 id="pic" > My Pictures</h2>
+                <img style=";" src="aesthetic1.jpg" > 
+
+            </div>
+
+            <div class="card">
+               <h3> My Videos</h3>  
+               <iframe style=" width:400px; height:200px;" src="videos/aesthetic_room.mp4"> </iframe>  
+            </div>
+            <div class="card">
+                Follow <Me class=""><a href="www.facebook.com/profilename" > </a></Me>
+            </div>
+        </div>
+     </article>
+    
+<input id="textfield"type="text" value="" style="width:200px;height:30px;" > 
+<input type="button" value="Submit" style="width: 100px;height:30px;" onclick="alerMe();">
+</div>
+
+<div id ="Contact" class="tabcontent">
+    <h2> Contact</h2>
+
+    <span>
+        <label value=" Email"> Enter your email</label>
+        <input id="textfield"type="text" value="" style="width:300px;height:30px;" > 
+<input type="button" value="Contact Us" style="width: 100px;height:30px;" onclick="contactUs();">
+    </span>
+</div>
+
+<div id ="About" class="tabcontent">
+    <h2> About</h2>   <h2> My Profile</h2>
+
+<p> 
+My name is Carmel Katz. I love to dance and win things.
+
+
+
+<script>
+    function openPage(pageName,elmnt,color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  
+  
+    function alertMe() {
+      var mytxt = document.getElementById("textfield").value;
+      alert(mytxt+" Hello there!!!");
+      document.getElementById("textfield").value = "";
+    }
+  
+  
+  
+    </script>
+</body>
+
+
+</html>
